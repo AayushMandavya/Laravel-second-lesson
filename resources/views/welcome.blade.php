@@ -10,11 +10,12 @@
     <h2>
         New Lesson TO-DO
     </h2>
-    <p>{{$header}}</p>
-    @foreach($todolist as $value)
-    <p>
-        {{$value}}
-    </p>
-    @endforeach
+    
+
+    <form action="{{route('saveTodo')}}" method="post">
+        @csrf
+        <input type="text" name="todo">
+        <button type="submit">Save</button>
+    </form>
 </body>
 </html>

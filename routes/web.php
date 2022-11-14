@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\TodolistController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,8 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome',[
-        'header'=> 'This is the header text',
-        'todolist'=>['test1','test2'],
-    ]);
+    return view('welcome');
 });
+
+
+Route::post('/save-todo', [TodolistController::class,'saveTodo'])->name('saveTodo');
